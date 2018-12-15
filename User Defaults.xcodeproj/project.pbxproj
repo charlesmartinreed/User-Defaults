@@ -12,6 +12,11 @@
 		8C65E42A21C475560080A577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C65E42821C475560080A577 /* Main.storyboard */; };
 		8C65E42C21C475570080A577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C65E42B21C475570080A577 /* Assets.xcassets */; };
 		8C65E42F21C475570080A577 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C65E42D21C475570080A577 /* LaunchScreen.storyboard */; };
+		8C65E43721C47AFC0080A577 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C65E43621C47AFC0080A577 /* Constants.swift */; };
+		8C65E43921C47B620080A577 /* CustomSegControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C65E43821C47B620080A577 /* CustomSegControl.swift */; };
+		8C65E43B21C47DFA0080A577 /* PetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C65E43A21C47DFA0080A577 /* PetImageView.swift */; };
+		8C65E43D21C47FEF0080A577 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C65E43C21C47FEF0080A577 /* NameTextField.swift */; };
+		8C65E43F21C481DB0080A577 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C65E43E21C481DB0080A577 /* SaveButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		8C65E42B21C475570080A577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C65E42E21C475570080A577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C65E43021C475570080A577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C65E43621C47AFC0080A577 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8C65E43821C47B620080A577 /* CustomSegControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegControl.swift; sourceTree = "<group>"; };
+		8C65E43A21C47DFA0080A577 /* PetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetImageView.swift; sourceTree = "<group>"; };
+		8C65E43C21C47FEF0080A577 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
+		8C65E43E21C481DB0080A577 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +66,15 @@
 			children = (
 				8C65E42421C475560080A577 /* AppDelegate.swift */,
 				8C65E42621C475560080A577 /* ViewController.swift */,
+				8C65E43821C47B620080A577 /* CustomSegControl.swift */,
+				8C65E43A21C47DFA0080A577 /* PetImageView.swift */,
+				8C65E43C21C47FEF0080A577 /* NameTextField.swift */,
+				8C65E43E21C481DB0080A577 /* SaveButton.swift */,
 				8C65E42821C475560080A577 /* Main.storyboard */,
 				8C65E42B21C475570080A577 /* Assets.xcassets */,
 				8C65E42D21C475570080A577 /* LaunchScreen.storyboard */,
 				8C65E43021C475570080A577 /* Info.plist */,
+				8C65E43621C47AFC0080A577 /* Constants.swift */,
 			);
 			path = "User Defaults";
 			sourceTree = "<group>";
@@ -135,8 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C65E43D21C47FEF0080A577 /* NameTextField.swift in Sources */,
+				8C65E43F21C481DB0080A577 /* SaveButton.swift in Sources */,
+				8C65E43921C47B620080A577 /* CustomSegControl.swift in Sources */,
 				8C65E42721C475560080A577 /* ViewController.swift in Sources */,
+				8C65E43B21C47DFA0080A577 /* PetImageView.swift in Sources */,
 				8C65E42521C475560080A577 /* AppDelegate.swift in Sources */,
+				8C65E43721C47AFC0080A577 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
