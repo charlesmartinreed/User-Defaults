@@ -26,6 +26,18 @@ class NameTextField: UITextField {
         tintColor = Colors.darkGray
         textColor = Colors.darkGray
         font = UIFont.boldSystemFont(ofSize: 28)
+        textAlignment = .center
         backgroundColor = .white
+    }
+    
+    func updateStyle(isDarkMode: Bool) {
+        let mainColor = isDarkMode ? .white : Colors.darkGray
+        keyboardAppearance = isDarkMode ? .dark : .light
+        
+        UIView.animate(withDuration: 0.4) {
+            self.tintColor = mainColor
+            self.textColor = mainColor
+            self.backgroundColor = isDarkMode ? Colors.darkGray : .white
+        }
     }
 }

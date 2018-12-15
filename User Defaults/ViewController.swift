@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //MARK:- UI Properties
+    //MARK:- Properties
     var segControl: CustomSegControl!
     var petImageView: PetImageView!
     var nameTextField: NameTextField!
     var saveButton: SaveButton!
+    
+    var isDarkMode = false
+    let defaults = UserDefaults.standard
+    
+    //Sean suggested this a means of avoiding "stringly" typed keys and potential typos
+    struct Keys {
+        static let prefersDarkMode = "prefersDarkMode"
+        static let petName = "petName"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +31,15 @@ class ViewController: UIViewController {
         //Property inits
         let segItems = ["Light", "Dark"]
         segControl = CustomSegControl(items: segItems)
+        segControl.addTarget(self, action: #selector(didChangeStyleSegmentedControl), for: .valueChanged)
         
         petImageView = PetImageView(image: UIImage(named: "harper"))
         nameTextField = NameTextField()
+        
         saveButton = SaveButton()
+        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        
+        
         
         //add subViews
         view.addSubview(segControl)
@@ -34,6 +48,9 @@ class ViewController: UIViewController {
         view.addSubview(saveButton)
         
         setupConstraints()
+        
+        checkForSavedStylePreference()
+        checkForSavedName()
         
     }
     
@@ -78,7 +95,54 @@ class ViewController: UIViewController {
             NSLayoutConstraint.activate(constraint)
         }
     }
-
+    
+    //MARK:- Update style for dark/light mode
+    func updateStyle() {
+        UIView.animate(withDuration: 0.4) {
+            self.view.backgroundColor = self.isDarkMode ? Colors.darkGray : .white
+            
+            self.nameTextField.updateStyle(isDarkMode: self.isDarkMode)
+        }
+    }
+    
+    //MARK:- Action methods for UI elements
+    @objc func didChangeStyleSegmentedControl(_ sender: CustomSegControl) {
+        isDarkMode = sender.selectedSegmentIndex == 1
+        saveStylePreference()
+        updateStyle()
+        print("clicked \(sender.selectedSegmentIndex)")
+    }
+    
+    @objc func saveButtonTapped() {
+        saveName()
+    }
+    
+    //MARK:- Save and retrieval methods
+    func saveName() {
+        guard let name = nameTextField.text else { return }
+        defaults.set(name, forKey: Keys.petName)
+    }
+    
+    func checkForSavedName() {
+        guard let savedName = defaults.string(forKey: Keys.petName) else { return }
+        nameTextField.text = savedName
+    }
+    
+    func saveStylePreference() {
+        //saving a boolean for dark mode
+        defaults.set(isDarkMode, forKey: Keys.prefersDarkMode)
+    }
+    
+    func checkForSavedStylePreference() {
+        //grab from user defaults
+        let prefersDarkMode = defaults.bool(forKey: Keys.prefersDarkMode)
+        
+        if prefersDarkMode {
+            isDarkMode = true
+            updateStyle()
+            segControl.selectedSegmentIndex = 1 //or, dark mode selection
+        }
+    }
 
 }
 
