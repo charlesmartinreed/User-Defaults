@@ -16,6 +16,11 @@ class ViewController: UIViewController {
     var nameTextField: NameTextField!
     var saveButton: SaveButton!
     
+    let savedLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
     var isDarkMode = false
     let defaults = UserDefaults.standard
     
@@ -39,13 +44,19 @@ class ViewController: UIViewController {
         saveButton = SaveButton()
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         
-        
-        
+        savedLabel.font = UIFont.boldSystemFont(ofSize: 36)
+        savedLabel.text = "SAVED!"
+        savedLabel.frame = CGRect(x: view.frame.height / 2, y: view.frame.width / 2, width: 100, height: 100)
+        savedLabel.textColor = UIColor(red: 27/255, green: 186/255, blue: 0/255, alpha: 1)
+        savedLabel.alpha = 0 //begins by being hidden
+        savedLabel.translatesAutoresizingMaskIntoConstraints = false
+
         //add subViews
         view.addSubview(segControl)
         view.addSubview(petImageView)
         view.addSubview(nameTextField)
         view.addSubview(saveButton)
+        view.addSubview(savedLabel)
         
         setupConstraints()
         
@@ -89,7 +100,12 @@ class ViewController: UIViewController {
             saveButton.heightAnchor.constraint(equalToConstant: 50),
             saveButton.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 30)]
         constraints.append(saveButtonConstraints)
-        //NSLayoutConstraint.activate(saveButtonConstraints)
+        
+        //constraints
+        let labelConstraints = [
+            savedLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            savedLabel.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 50)]
+        constraints.append(labelConstraints)
         
         constraints.forEach { (constraint) in
             NSLayoutConstraint.activate(constraint)
@@ -115,6 +131,18 @@ class ViewController: UIViewController {
     
     @objc func saveButtonTapped() {
         saveName()
+        
+        UIView.animate(withDuration: 1, delay: 0, options: .autoreverse, animations: {
+            self.savedLabel.alpha = 1
+        }) { (_) in
+            self.savedLabel.alpha = 0
+        }
+        
+//        UIView.animate(withDuration: 1, animations: {
+//            self.savedLabel.alpha = 1
+//        }) { (_) in
+//            self.savedLabel.alpha = 0
+//        }
     }
     
     //MARK:- Save and retrieval methods

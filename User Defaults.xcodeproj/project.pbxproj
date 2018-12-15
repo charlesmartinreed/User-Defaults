@@ -17,6 +17,7 @@
 		8C65E43B21C47DFA0080A577 /* PetImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C65E43A21C47DFA0080A577 /* PetImageView.swift */; };
 		8C65E43D21C47FEF0080A577 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C65E43C21C47FEF0080A577 /* NameTextField.swift */; };
 		8C65E43F21C481DB0080A577 /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C65E43E21C481DB0080A577 /* SaveButton.swift */; };
+		8C65E44121C4A3AD0080A577 /* SaveSuccessLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C65E44021C4A3AD0080A577 /* SaveSuccessLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8C65E43A21C47DFA0080A577 /* PetImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetImageView.swift; sourceTree = "<group>"; };
 		8C65E43C21C47FEF0080A577 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 		8C65E43E21C481DB0080A577 /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
+		8C65E44021C4A3AD0080A577 /* SaveSuccessLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSuccessLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				8C65E43A21C47DFA0080A577 /* PetImageView.swift */,
 				8C65E43C21C47FEF0080A577 /* NameTextField.swift */,
 				8C65E43E21C481DB0080A577 /* SaveButton.swift */,
+				8C65E44021C4A3AD0080A577 /* SaveSuccessLabel.swift */,
 				8C65E42821C475560080A577 /* Main.storyboard */,
 				8C65E42B21C475570080A577 /* Assets.xcassets */,
 				8C65E42D21C475570080A577 /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C65E43D21C47FEF0080A577 /* NameTextField.swift in Sources */,
+				8C65E44121C4A3AD0080A577 /* SaveSuccessLabel.swift in Sources */,
 				8C65E43F21C481DB0080A577 /* SaveButton.swift in Sources */,
 				8C65E43921C47B620080A577 /* CustomSegControl.swift in Sources */,
 				8C65E42721C475560080A577 /* ViewController.swift in Sources */,

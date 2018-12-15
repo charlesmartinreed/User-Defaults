@@ -28,7 +28,6 @@ class CustomSegControl: UISegmentedControl {
     private func setupSegControl() {
         frame = CGRect(x: 30, y: 84, width: 315, height: 33)
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor.white
         tintColor = Colors.lightBlue
         selectedSegmentIndex = 0 //because we're starting out in "light" mode
     }
